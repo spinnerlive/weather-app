@@ -1,1 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+.skysnap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    filter: drop-shadow(5px 10px 15px);
+    width: 50%;
+    color: rgba(0, 0, 0, 0.777);
+    margin: 60px auto;
+}
+
+.container {
+    position: relative;;
+    width: 90%;
+    max-width: 470px;
+    margin: 100px auto 0;
+    text-align: center;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    height: 30px;
+    border-radius: 50px;
+    border-bottom: 1px solid white;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-radius: 50%;
+    border-bottom: 1px solid white;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #8080806a;
+    transition: 0.5s;
+}
+
+.search button img {
+    width: 20px;
+    margin-top: 4px;
+}
+
+.weather-icon {
+    width: 170px;
+    margin-top: 30px;
+}
+
+.weather h1 {
+    margin-top: 40px;
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.weather{
+    display: none;
+}
+
+.error {
+    width: 50%;
+    margin: 20px auto;
+    margin-top: 20px;
+    padding: 10px 10px;
+    background-color: rgb(232, 62, 62);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
