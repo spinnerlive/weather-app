@@ -1,131 +1,192 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.skysnap{
+/* Ensure the body background image covers the screen */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 94.5vh; /* Ensures it covers the viewport height */
+    transition: background-image 1s ease-in-out, background-color 1s ease-in-out; /* Smooth animation for background changes */
+    margin: 0; /* Remove default margin to prevent scroll issues */
+}
+
+/* Add animation when error occurs */
+.error {
+    animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in effect for error message */
+}
+
+/* Keyframes for error fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animations to weather details */
+.weather {
+    animation: slideIn 0.8s ease-in-out; /* Smooth slide-in effect for weather details */
+}
+
+/* Keyframes for weather slide-in animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.skysnap {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
     letter-spacing: 1px;
-    filter: drop-shadow(5px 10px 15px);
-    width: 50%;
-    color: rgba(0, 0, 0, 0.777);
-    margin: 60px auto;
+    padding: 20px;
+    filter: drop-shadow(5px 10px 20px);
+    color: rgb(39, 39, 39);
+    margin: 40px auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    width: 20%;
+    text-align: center;
+}
+
+.skysnap h1{
+    font-size: 2rem;
 }
 
 .container {
-    position: relative;;
-    width: 90%;
+    width: 80%;
     max-width: 470px;
-    margin: 100px auto 0;
+    margin: 20px auto;
     text-align: center;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    backdrop-filter: blur(10px);
     color: #fff;
-    padding: 40px 35px;
-    border-radius: 20px;
+    padding: 30px 20px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .search {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .search input {
+    flex: 1;
+    background: transparent;
     border: 0;
     outline: 0;
-    background: transparent;
-    color: rgb(255, 255, 255);
-    padding: 10px 25px;
-    height: 30px;
-    border-radius: 50px;
     border-bottom: 1px solid white;
-    flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
 }
 
 .search button {
-    border: 0;
-    outline: 0;
+    border: 1px solid white;
     background: transparent;
-    border-radius: 50%;
-    border-bottom: 1px solid white;
-    width: 45px;
-    height: 45px;
     cursor: pointer;
+    margin-left: -20px;
+    width: 39px;
+    height: 39.5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search button:hover {
-    background-color: #8080806a;
-    transition: 0.5s;
-}
-
-.search button img {
-    width: 20px;
-    margin-top: 4px;
-}
-
-.weather-icon {
-    width: 170px;
-    margin-top: 30px;
+    background-color: rgba(180, 180, 180, 0.545);
+    transition: 0.3s;
 }
 
 .weather h1 {
-    margin-top: 40px;
-    font-size: 80px;
-    font-weight: 500;
+    font-size: 60px;
+    margin-top: 50px;
 }
 
 .weather h2 {
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: -10px;
+    font-size: 30px;
 }
 
 .details {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    margin-top: 40px;
+    /* padding: 0px 40px; */
 }
 
 .col {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    margin-top: 30px;
-}
-
-.col img{
-    width: 40px;
-    margin-right: 10px;
-}
-
-.humidity, .wind {
-    font-size: 28px;
-    margin-top: -6px;
-}
-
-.weather{
-    display: none;
+    text-align: center;
+    margin: 15px 30px;
 }
 
 .error {
-    width: 50%;
+    display: none;
+    width: 90%;
     margin: 20px auto;
-    margin-top: 20px;
-    padding: 10px 10px;
+    padding: 10px;
     background-color: rgb(232, 62, 62);
     color: white;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .skysnap{
+        width: 50%;
+    }
+
+    .skysnap h1{
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .search input {
+        font-size: 14px;
+    }
+
+    .search button{
+        height: 37px;
+        width: 37px;
+        margin-left: -17px;
+    }
+
+    .weather h1 {
+        font-size: 40px;
+    }
+
+    .weather h2 {
+        font-size: 25px;
+    }
+
+    .details {
+        flex-direction: row;
+    }
+
+    .col p {
+        font-size: 14px;
+    }
 }
